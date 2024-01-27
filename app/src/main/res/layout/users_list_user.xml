@@ -16,7 +16,7 @@
         tools:srcCompat="@drawable/user_large" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/user_name"
         android:layout_width="wrap_content"
         android:layout_height="42dp"
         android:layout_marginStart="16dp"
@@ -35,7 +35,7 @@
         android:layout_marginTop="8dp"
         android:textStyle="italic"
         app:layout_constraintStart_toEndOf="@+id/user_image"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/user_name"
         tools:text="(836) 650-8807, 5550 Parker Rd" />
 
     <View
