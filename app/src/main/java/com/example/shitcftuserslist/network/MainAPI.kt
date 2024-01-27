@@ -7,6 +7,6 @@ import retrofit2.http.Query
 interface MainAPI {
     @GET("api")
     suspend fun getUsersData(
-        //@Query("results") results: Int
+        @Query("results") results: Int
     ): UserResult
 }
