@@ -39,7 +39,8 @@ class UserListAdapter(private val onItemClicked: (User) -> Unit):
                 fun bind(user: User) = with(binding) {
                     Picasso.get().load(user.image).into(userImage)
                     userName.text = user.name
-                    userPhoneAddress.text = user.street
+                    userAddress.text = user.street
+                    userPhone.text = user.cell
                 }
     }
 
