@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">SHIT CFT UsersList</string>
+    <string name="users_list">Users List</string>
+    <string name="user_details">User Details</string>
 </resources>
