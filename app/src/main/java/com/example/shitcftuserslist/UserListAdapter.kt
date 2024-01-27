@@ -1,5 +1,6 @@
 package com.example.shitcftuserslist
 
+import android.content.res.Resources
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
@@ -8,6 +9,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.shitcftuserslist.databinding.FragmentUsersListBinding
 import com.example.shitcftuserslist.databinding.UsersListUserBinding
+import com.squareup.picasso.Picasso
 
 class UserListAdapter(private val onItemClicked: (User) -> Unit):
     ListAdapter<User, UserListAdapter.UserViewHolder>(DiffCallback){
@@ -35,7 +37,7 @@ class UserListAdapter(private val onItemClicked: (User) -> Unit):
     class UserViewHolder(private var binding: UsersListUserBinding):
             RecyclerView.ViewHolder(binding.root) {
                 fun bind(user: User) = with(binding) {
-                    userImage.setImageURI(user.image)
+                    Picasso.get().load(user.image).into(userImage)
                     userName.text = user.name
                     userPhoneAddress.text = user.street
                 }
