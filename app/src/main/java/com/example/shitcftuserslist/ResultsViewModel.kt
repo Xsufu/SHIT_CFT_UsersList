@@ -69,7 +69,7 @@ class ResultsViewModel(private val userDao: UserDao): ViewModel() {
     fun addUsers(list: List<Result>) {
         for (user in list) {
             val newUser = getNewUserEntry(
-                user.name.title + user.name.first + user.name.last,
+                user.name.title + " " + user.name.first + " " + user.name.last,
                 (user.location.street.number).toString() + " " + user.location.street.name,
                 user.location.city,
                 user.location.state,
