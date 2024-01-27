@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -82,10 +83,21 @@ class UsersListFragment : Fragment() {
             // Если записей нет
             if (filledFlag == 0) {
                 // Получить данные с API
+                // TODO: Найти решение с обработкой ошибок через Retrofit
                 CoroutineScope(Dispatchers.IO).launch {
-                    val userResult = mainAPI.getUsersData(20)
-                    // Добавление данных в БД
-                    viewModel.addUsers(userResult.results)
+                    try {
+                        val response = mainAPI.getUsersData(20)
+                        // Добавление данных в БД
+                        viewModel.addUsers(response.results)
+                    } catch (e: Exception) {
+                        requireActivity().runOnUiThread {
+                            Toast.makeText(
+                                requireContext(),
+                                "Ошибка при получении данных. \nПроверьте подключение к сети",
+                                Toast.LENGTH_SHORT
+                            ).show()
+                        }
+                    }
                 }
             }
         }
