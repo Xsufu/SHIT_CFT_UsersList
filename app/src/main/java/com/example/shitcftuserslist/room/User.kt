@@ -32,5 +32,5 @@ data class User(
     @ColumnInfo(name = "cell")
     val cell: String,
     @ColumnInfo(name = "image")
-    val image: Uri
+    val image: String
 )
