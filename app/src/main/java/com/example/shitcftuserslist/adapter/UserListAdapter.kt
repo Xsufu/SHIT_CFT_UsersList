@@ -25,6 +25,7 @@ class UserListAdapter(private val onItemClicked: (User) -> Unit):
     }
 
     override fun onBindViewHolder(holder: UserViewHolder, position: Int) {
+        // Получение позиции нажатого элемента
         val current = getItem(position)
         holder.itemView.setOnClickListener {
             onItemClicked(current)

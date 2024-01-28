@@ -60,6 +60,7 @@ class UsersListFragment : Fragment() {
         refreshData()
     }
 
+    // Инициализация Retrofit
     private fun initRetrofit() {
         // Создаём перехватчик и указываем его уровень
         val interceptor = HttpLoggingInterceptor()

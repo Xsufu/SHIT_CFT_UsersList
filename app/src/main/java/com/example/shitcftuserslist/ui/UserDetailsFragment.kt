@@ -47,37 +47,50 @@ class UserDetailsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        // ID пользователя, которого надо отобразить
         val id = navigationArgs.userId
+        // Отображение информации о пользователе
         viewModel.getUserById(id).observe(this.viewLifecycleOwner) {selectedUser ->
             user = selectedUser
             bind(user)
         }
 
+        // Привязка слушателя к тексу с мобильным номером
         binding.userDetailsCell.setOnClickListener {
+            // Сохранение номера телефона в переменную
             val cellNumber = user.cell
+            // Вызов интента
             val callIntent = Intent(Intent.ACTION_DIAL).apply {
                 data = Uri.parse("tel: $cellNumber")
             }
             startActivity(callIntent)
         }
 
+        // Привязка слушателя к рабочему номеру
         binding.userDetailsPhone.setOnClickListener {
+            // Сохранение номера телефона в переменную
             val phoneNumber = user.phone
+            // Вызов интента
             val callIntent = Intent(Intent.ACTION_DIAL).apply {
                 data = Uri.parse("tel: $phoneNumber")
             }
             startActivity(callIntent)
         }
 
+        // Привязка прослушки к email
         binding.userDetailsEmail.setOnClickListener {
+            // Сохранение email в переменную
             val email = user.email
+            // Вызов интента
             val callIntent = Intent(Intent.ACTION_VIEW).apply {
                 data = Uri.parse("mailto: $email")
             }
             startActivity(callIntent)
         }
 
+        // Привязка прослушки к ConstraintLayout с адресом
         binding.userAddressCV.setOnClickListener {
+            // Вызов интента
             val intent = Intent(Intent.ACTION_VIEW)
             val addressUri = Uri.parse("geo:0,0")
                 .buildUpon()
@@ -87,6 +100,11 @@ class UserDetailsFragment : Fragment() {
         }
     }
 
+    /**
+     * Функция привязки данных из БД к UI
+     *
+     * @param user информация о пользователе для вывода
+     */
     private fun bind(user: User) {
         val dob = OffsetDateTime.parse(user.dob, DateTimeFormatter.ISO_DATE_TIME)
         val formatter = DateTimeFormatter.ofPattern("dd MMMM yyyy HH:mm:ss")

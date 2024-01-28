@@ -37,6 +37,8 @@ interface UserDao {
 
     /**
      * Добавление пользователя в БД
+     *
+     * @param user пользователь, которого необходимо добавить в БД
      */
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insertUser(user: User)
