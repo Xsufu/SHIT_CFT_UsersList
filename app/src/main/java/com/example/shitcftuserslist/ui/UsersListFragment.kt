@@ -1,4 +1,4 @@
-package com.example.shitcftuserslist
+package com.example.shitcftuserslist.ui
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -9,6 +9,8 @@ import android.widget.Toast
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.shitcftuserslist.model.ResultsViewModel
+import com.example.shitcftuserslist.adapter.UserListAdapter
 import com.example.shitcftuserslist.databinding.FragmentUsersListBinding
 import com.example.shitcftuserslist.network.MainAPI
 import com.example.shitcftuserslist.room.ResultsApplication

@@ -1,14 +1,11 @@
-package com.example.shitcftuserslist
+package com.example.shitcftuserslist.model
 
-import android.net.Uri
-import androidx.core.net.toUri
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
 import com.example.shitcftuserslist.data.Result
-import com.example.shitcftuserslist.data.UserResult
 import com.example.shitcftuserslist.room.User
 import com.example.shitcftuserslist.room.UserDao
 import kotlinx.coroutines.launch
@@ -70,7 +67,7 @@ class ResultsViewModel(private val userDao: UserDao): ViewModel() {
         for (user in list) {
             val newUser = getNewUserEntry(
                 user.name.title + " " + user.name.first + " " + user.name.last,
-                (user.location.street.number).toString() + " " + user.location.street.name,
+                user.location.street.name + ", " + (user.location.street.number).toString(),
                 user.location.city,
                 user.location.state,
                 user.location.country,

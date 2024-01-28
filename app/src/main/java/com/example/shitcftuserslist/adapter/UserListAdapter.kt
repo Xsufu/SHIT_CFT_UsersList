@@ -1,13 +1,11 @@
-package com.example.shitcftuserslist
+package com.example.shitcftuserslist.adapter
 
-import android.content.res.Resources
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import com.example.shitcftuserslist.room.User
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.example.shitcftuserslist.databinding.FragmentUsersListBinding
 import com.example.shitcftuserslist.databinding.UsersListUserBinding
 import com.squareup.picasso.Picasso
 
@@ -16,7 +14,7 @@ class UserListAdapter(private val onItemClicked: (User) -> Unit):
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ): UserListAdapter.UserViewHolder {
+    ): UserViewHolder {
         return UserViewHolder(
             UsersListUserBinding.inflate(
                 LayoutInflater.from(
@@ -26,7 +24,7 @@ class UserListAdapter(private val onItemClicked: (User) -> Unit):
         )
     }
 
-    override fun onBindViewHolder(holder: UserListAdapter.UserViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: UserViewHolder, position: Int) {
         val current = getItem(position)
         holder.itemView.setOnClickListener {
             onItemClicked(current)
