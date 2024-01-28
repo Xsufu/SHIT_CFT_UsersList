@@ -2,4 +2,15 @@
     <string name="app_name">SHIT CFT UsersList</string>
     <string name="users_list">Users List</string>
     <string name="user_details">User Details</string>
+    <string name="cell_number">Мобильный: %s</string>
+    <string name="user_phone">Рабочий: %s</string>
+    <string name="user_email">Email: %s</string>
+    <string name="address">Адрес</string>
+    <string name="contacts">Контакты</string>
+    <string name="user_city">Город: %s</string>
+    <string name="user_state">Штат: %s</string>
+    <string name="user_country">Страна: %s</string>
+    <string name="dob">Дата рождения</string>
+    <string name="user_dob">%s</string>
+    <string name="user_street">Дом: %s</string>
 </resources>
