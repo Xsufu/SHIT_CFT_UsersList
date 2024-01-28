@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.UserDetailsFragment">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/user_info_card"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="72dp"
+        android:layout_marginEnd="8dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="3dp"
+        app:contentPadding="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/user_details_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="80dp"
+            android:gravity="center_horizontal"
+            style="@style/Theme.Material3.DynamicColors.DayNight"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            tools:text="Joyce Ellis" />
+
+        <TextView
+            android:id="@+id/user_details_cell"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="108dp"
+            android:gravity="center_horizontal"
+            android:text="@string/cell_number"
+            style="@style/Theme.Material3.DynamicColors.DayNight"
+            android:textSize="16sp" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/user_image_card"
+        android:layout_width="128dp"
+        android:layout_height="128dp"
+        android:layout_marginTop="8dp"
+        app:cardCornerRadius="32dp"
+        app:cardElevation="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/user_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            tools:srcCompat="@drawable/user_large" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/user_contacts_card"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="3dp"
+        app:contentPadding="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/user_info_card">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/contacts_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/ThemeOverlay.Material3.DynamicColors.DayNight"
+                android:text="@string/contacts"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/user_details_phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/user_phone"
+                style="@style/Theme.Material3.DynamicColors.DayNight"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="@+id/contacts_label"
+                app:layout_constraintTop_toBottomOf="@+id/contacts_label" />
+
+            <TextView
+                android:id="@+id/user_details_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/user_email"
+                style="@style/Theme.Material3.DynamicColors.DayNight"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="@+id/user_details_phone"
+                app:layout_constraintTop_toBottomOf="@+id/user_details_phone" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/user_address_card"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="3dp"
+        app:contentPadding="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/user_contacts_card">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/user_address_CV"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/address_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/ThemeOverlay.Material3.DynamicColors.DayNight"
+                android:text="@string/address"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/user_details_street"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/user_street"
+                style="@style/Theme.Material3.DynamicColors.DayNight"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="@+id/address_label"
+                app:layout_constraintTop_toBottomOf="@+id/address_label"/>
+
+            <TextView
+                android:id="@+id/user_details_city"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/user_city"
+                style="@style/Theme.Material3.DynamicColors.DayNight"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="@+id/user_details_street"
+                app:layout_constraintTop_toBottomOf="@+id/user_details_street" />
+
+            <TextView
+                android:id="@+id/user_details_state"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/user_state"
+                style="@style/Theme.Material3.DynamicColors.DayNight"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="@+id/user_details_city"
+                app:layout_constraintTop_toBottomOf="@+id/user_details_city" />
+
+            <TextView
+                android:id="@+id/user_details_country"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/user_country"
+                style="@style/Theme.Material3.DynamicColors.DayNight"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="@+id/user_details_state"
+                app:layout_constraintTop_toBottomOf="@+id/user_details_state" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/user_dob_card"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="3dp"
+        app:contentPadding="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/user_address_card">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/dob_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/dob"
+                style="@style/ThemeOverlay.Material3.DynamicColors.DayNight"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/user_details_dob"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/user_dob"
+                style="@style/Theme.Material3.DynamicColors.DayNight"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="@+id/dob_label"
+                app:layout_constraintTop_toBottomOf="@+id/dob_label" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
