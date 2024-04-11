@@ -3,6 +3,7 @@ package com.example.shitcftuserslist.unitTestClass
 import org.junit.jupiter.api.Assertions.*
 
 import org.junit.jupiter.api.Test
+import org.junit.jupiter.api.assertThrows
 import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.Arguments
 import org.junit.jupiter.params.provider.Arguments.arguments
@@ -55,5 +56,12 @@ class CalculatorTest {
         val actual = calculator.exponentiation(number, power)
 
         assertEquals(expected, actual)
+    }
+
+    @Test
+    fun `WHEN 0 is power of 0 EXPECT illegal argument exception`() {
+        assertThrows<IllegalArgumentException> {
+            calculator.exponentiation(0.0, 0.0)
+        }
     }
 }
