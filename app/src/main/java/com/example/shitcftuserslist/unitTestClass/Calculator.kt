@@ -1,6 +1,5 @@
 package com.example.shitcftuserslist.unitTestClass
 
-import java.lang.Math.pow
 import kotlin.math.pow
 
 class Calculator {
