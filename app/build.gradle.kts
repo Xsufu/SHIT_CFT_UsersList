@@ -85,4 +85,11 @@ dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.9.2")
     testImplementation("org.junit.jupiter:junit-jupiter-params:5.9.2")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.9.2")
+
+    //Arch Core - InstantTaskExecutorRule
+    testImplementation("android.arch.core:core-testing:1.1.1")
+    //Mockito framework
+    testImplementation("org.mockito:mockito-core:5.2.0")
+    //Truth Assertion
+    testImplementation("com.google.truth:truth:1.1")
 }
