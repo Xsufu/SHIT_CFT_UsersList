@@ -8,6 +8,9 @@ import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.Arguments
 import org.junit.jupiter.params.provider.Arguments.arguments
 import org.junit.jupiter.params.provider.MethodSource
+import org.mockito.Mockito.mock
+import org.mockito.kotlin.doReturn
+import org.mockito.kotlin.whenever
 import java.util.stream.Stream
 
 class CalculatorTest {
@@ -63,5 +66,21 @@ class CalculatorTest {
         assertThrows<IllegalArgumentException> {
             calculator.exponentiation(0.0, 0.0)
         }
+    }
+
+    private val secretCode: SecretCode = mock()
+    private val publicCodeCalculator = PublicCodeCalculator(secretCode)
+
+    @Test
+    fun `WHEN get publicCode with key 8 EXPECT 2049`() {
+        whenever(secretCode.hardCalculations()) doReturn (2041.0)
+
+        val key = 8.0
+
+        val expected = 2049.0
+
+        val actual = publicCodeCalculator.getPublicKey(key)
+
+        assertEquals(expected, actual)
     }
 }
